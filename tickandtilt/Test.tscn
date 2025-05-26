@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc5155rm8jlu7"]
+
+[ext_resource type="PackedScene" uid="uid://ticlvp2csbb5" path="res://Assets/KayCity/base.gltf" id="1_njov2"]
+[ext_resource type="PackedScene" uid="uid://73ibd5npqtkx" path="res://node_3d.tscn" id="2_2au82"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="base2" parent="." instance=ExtResource("1_njov2")]
+transform = Transform3D(3.60202, 0, 0, 0, 1.03667, 0, 0, 0, 4.02286, 0.0974646, 0, 0.290354)
+
+[node name="Player" parent="." instance=ExtResource("2_2au82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86492, 0, -0.250912)

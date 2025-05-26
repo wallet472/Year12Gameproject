@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://73ibd5npqtkx"]
+
+[ext_resource type="PackedScene" uid="uid://deam7troldvl4" path="res://Assets/KennyCharacters/character-male-a.glb" id="1_a202f"]
+[ext_resource type="Script" uid="uid://dd140gdpywhbx" path="res://node_3d.gd" id="1_noarx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_noarx")
+
+[node name="character-male-a2" parent="." instance=ExtResource("1_a202f")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.56, 0, 0, 0, 0.448, 0, 0, 0, 0.5, 0.00354815, 0.308313, -0.000460744)
+shape = SubResource("CapsuleShape3D_noarx")
+metadata/_edit_group_ = true
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.922659, -0.385616, 0, 0.385616, 0.922659, 0, 0.388996, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -2.10614)
