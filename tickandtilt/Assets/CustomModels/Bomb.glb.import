@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dhk35a2uv0yx3"
-path="res://.godot/imported/building_E.gltf-fc4e187d1c143db16873fcc9fdf1bbe1.scn"
+uid="uid://c8j5md5cfvr4o"
+path="res://.godot/imported/Bomb.glb-7b8c64c6bde37e63fb801c727ce6c29c.scn"
 
 [deps]
 
-source_file="res://Assets/KayCity/building_E.gltf"
-dest_files=["res://.godot/imported/building_E.gltf-fc4e187d1c143db16873fcc9fdf1bbe1.scn"]
+source_file="res://Assets/CustomModels/Bomb.glb"
+dest_files=["res://.godot/imported/Bomb.glb-7b8c64c6bde37e63fb801c727ce6c29c.scn"]
 
 [params]
 
@@ -32,12 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:building_E": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
