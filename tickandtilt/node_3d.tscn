@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://73ibd5npqtkx"]
+[gd_scene load_steps=47 format=4 uid="uid://73ibd5npqtkx"]
 
 [ext_resource type="Script" uid="uid://dd140gdpywhbx" path="res://node_3d.gd" id="1_noarx"]
 [ext_resource type="Texture2D" uid="uid://q864mjmqcxsb" path="res://Assets/KennyCharacters/Textures/colormap.png" id="2_noarx"]
@@ -3031,8 +3031,6 @@ _data = {
 radius = 0.221617
 height = 0.804988
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_noarx"]
-
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_noarx")
 
@@ -3110,7 +3108,7 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00354815, 0.308313, -0.000460744)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438024, 0)
 shape = SubResource("CapsuleShape3D_noarx")
 metadata/_edit_group_ = true
 
@@ -3118,10 +3116,6 @@ metadata/_edit_group_ = true
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.922659, -0.385616, 0, 0.385616, 0.922659, 0, 0.388996, 0)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-shape = SubResource("SphereShape3D_noarx")
-spring_length = 4.0
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.84217e-14, 0.22897, -4.90276)

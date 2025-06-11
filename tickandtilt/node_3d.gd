@@ -1,66 +1,61 @@
 extends CharacterBody3D
 
-@export_group("Camera")
-@export_range(0.0, 1.0) var mouse_sensitivity := 0.25
-
 @export_group("Movement")
-@export var move_speed := 8.0
-@export var acceleratiom := 20.0
-@export var rotation_speed := 12.0
+@export var forward_speed := 8.0   # Constant forward speed
+@export var lateral_speed := 5.0   # Left/right speed
+@export var acceleration := 20.0   # Movement smoothing
+@export var jump_force := 5.0      # Jump strength
+@export var gravity := 9.8         # Gravity strength
 
-var _camera_input_direction := Vector2.ZERO
-var _last_movement_direction := Vector3.BACK
-
-@onready var _camera_pivot:Node3D = %CameraPivot
 @onready var _camera: Camera3D = %Camera3D
 @onready var _skin: Node3D = %testguy
-
 @onready var anim: AnimationPlayer = $testguy/AnimationPlayer
 
+# Camera offset (behind and slightly above player)
+var _camera_offset := Vector3(0, 2, 5)
 
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("left_click"):
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	if event.is_action_pressed("ui_cancel"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
-func _unhandled_input(event: InputEvent) -> void:
-	var is_camera_motion := (
-		event is InputEventMouseMotion and
-		Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
-	)
-	if  is_camera_motion:
-		_camera_input_direction = event.screen_relative
-		mouse_sensitivity
+func _ready() -> void:
+	# Optional: Hide mouse cursor
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func _physics_process(delta: float) -> void:
-	_camera_pivot.rotation.x += _camera_input_direction.y * delta
-	_camera_pivot.rotation.x = clamp(_camera_pivot.rotation.x, -PI / 6.0, PI/3.0)
-	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
-
-	_camera_input_direction = Vector2.ZERO
-
-	var raw_input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	var forward := _camera.global_basis.z
-	var right := _camera.global_basis.x
-	
-	var move_direction := forward * raw_input.y + right * raw_input.x
-	move_direction.y = 0.0
-	move_direction = move_direction.normalized()
-	
-	velocity = velocity.move_toward(move_direction * move_speed, acceleratiom * delta)
-	move_and_slide()
-	
-	if move_direction.length() >0.2:
-		_last_movement_direction = move_direction
-	var target_angel := Vector3.BACK.signed_angle_to(_last_movement_direction, Vector3.UP)
-	_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angel, rotation_speed * delta)
-	
-	var ground_speed := velocity.length()
-	if ground_speed > 0.0:
-		anim.play("local/walk_with_bomb",0.2)
+	# Apply gravity
+	if not is_on_floor():
+		velocity.y -= gravity * delta
 	else:
-		anim.play("local/idle_with_bomb",0.2)
-	
-	
+		# Jump input
+		if Input.is_action_just_pressed("jump"):
+			velocity.y = jump_force
+
+	# Get forward direction (negative Z-axis, Godot's forward)
+	var forward := global_transform.basis.z.normalized()
+	var right := global_transform.basis.x.normalized()
+
+	# Constant forward movement
+	var move_direction := forward * forward_speed
+	# Add lateral movement (left/right)
+	var lateral_input := Input.get_axis("move_left", "move_right")
+	move_direction += right * lateral_input * lateral_speed
+
+	# Preserve y velocity for gravity/jump
+	var y_velocity := velocity.y
+	# Update x and z velocities with smoothing
+	velocity.x = move_toward(velocity.x, move_direction.x, acceleration * delta)
+	velocity.z = move_toward(velocity.z, move_direction.z, acceleration * delta)
+	velocity.y = y_velocity
+
+	# Apply movement
+	move_and_slide()
+
+	# Update camera position (follow player from behind)
+	#_camera.global_position = global_position + _camera_offset
+	#_camera.look_at(global_position, Vector3.UP)
+
+	# Animation
+	var ground_speed := Vector2(velocity.x, velocity.z).length()
+	if ground_speed > 0.0:
+		anim.play("local/walk_with_bomb", 0.2)
+	else:
+		anim.play("local/idle_with_bomb", 0.2)
+	if not is_on_floor():
+		anim.play("jump", 0.2)
