@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export_group("Movement")
-@export var forward_speed := 8.0   # Constant forward speed
+@export var forward_speed := 2.0   # Constant forward speed
 @export var lateral_speed := 5.0   # Left/right speed
 @export var acceleration := 20.0   # Movement smoothing
 @export var jump_force := 5.0      # Jump strength
