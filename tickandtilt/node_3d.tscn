@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://73ibd5npqtkx"]
+[gd_scene load_steps=8 format=3 uid="uid://73ibd5npqtkx"]
 
 [ext_resource type="PackedScene" uid="uid://deam7troldvl4" path="res://Assets/KennyCharacters/character-male-a.glb" id="1_a202f"]
 [ext_resource type="Script" uid="uid://dd140gdpywhbx" path="res://node_3d.gd" id="1_noarx"]
+[ext_resource type="PackedScene" uid="uid://ticlvp2csbb5" path="res://Assets/KayCity/base.gltf" id="3_i5arm"]
+[ext_resource type="PackedScene" uid="uid://c14sl3ugu36ce" path="res://Assets/KayCity/building_A_withoutBase.gltf" id="4_wc5p8"]
+[ext_resource type="PackedScene" uid="uid://dq10qgmvcsjpg" path="res://Assets/KayCity/building_C_withoutBase.gltf" id="5_jsk3o"]
+[ext_resource type="PackedScene" uid="uid://b57qetdxtk7td" path="res://Assets/KayCity/building_G_withoutBase.gltf" id="6_4arys"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_noarx"]
 
@@ -22,3 +26,15 @@ transform = Transform3D(1, 0, 0, 0, 0.922659, -0.385616, 0, 0.385616, 0.922659, 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -2.10614)
+
+[node name="base2" parent="." instance=ExtResource("3_i5arm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.669444, 0, 0.341802)
+
+[node name="building_A_withoutBase2" parent="." instance=ExtResource("4_wc5p8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73003, 0, -0.00311589)
+
+[node name="building_C_withoutBase2" parent="." instance=ExtResource("5_jsk3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38294, 0, 0.967865)
+
+[node name="building_G_withoutBase2" parent="." instance=ExtResource("6_4arys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0421, -1.19209e-07, -2.66348)
