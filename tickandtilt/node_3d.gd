@@ -10,13 +10,29 @@ extends CharacterBody3D
 @onready var _camera: Camera3D = %Camera3D
 @onready var _skin: Node3D = %testguy
 @onready var anim: AnimationPlayer = $testguy/AnimationPlayer
-
+var health = 100
 # Camera offset (behind and slightly above player)
 var _camera_offset := Vector3(0, 2, 5)
 
 func _ready() -> void:
 	# Optional: Hide mouse cursor
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+func hurt(hit_points):
+	if hit_points < health: 
+		health -= hit_points
+	else: 
+		health = 0
+	$CameraPivot/Camera3D/ProgressBar.value = health 
+	if health == 0: 
+		die()
+		
+		
+func die():
+	print("DIE")
+
+
+
+
 
 func _physics_process(delta: float) -> void:
 	# Apply gravity
