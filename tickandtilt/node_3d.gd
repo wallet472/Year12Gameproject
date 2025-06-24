@@ -11,12 +11,16 @@ extends CharacterBody3D
 @onready var _skin: Node3D = %testguy
 @onready var anim: AnimationPlayer = $testguy/AnimationPlayer
 var health = 100
+@onready var health_bar: ProgressBar = $CameraPivot/Camera3D/HealthBar
+
+
 # Camera offset (behind and slightly above player)
 var _camera_offset := Vector3(0, 2, 5)
 
 func _ready() -> void:
 	# Optional: Hide mouse cursor
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	health_bar.value = health
 func hurt(hit_points):
 	if hit_points < health: 
 		health -= hit_points
@@ -29,6 +33,9 @@ func hurt(hit_points):
 		
 func die():
 	print("DIE")
+	health -= 20
+	health_bar.value = health
+	
 
 
 

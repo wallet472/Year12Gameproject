@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dvfh1hk22mcgp"
-path="res://.godot/imported/road_junction.gltf-ca4b9effc9b8e2c89de09b1e4370aac1.scn"
+valid=false
 
 [deps]
 
-source_file="res://Assets/KayCity/road_junction.gltf"
-dest_files=["res://.godot/imported/road_junction.gltf-ca4b9effc9b8e2c89de09b1e4370aac1.scn"]
+source_file="res://Assets/road_junction.gltf"
 
 [params]
 
