@@ -3139,18 +3139,19 @@ unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.84217e-14, 0.22897, -4.90276)
 
 [node name="HealthBar" type="ProgressBar" parent="CameraPivot/Camera3D"]
-offset_left = 25.0
-offset_top = 52.0
-offset_right = 399.0
-offset_bottom = 82.0
+offset_left = 42.3762
+offset_top = 56.0
+offset_right = 416.376
+offset_bottom = 86.0
+scale = Vector2(0.801197, 0.761197)
 theme_override_styles/background = SubResource("StyleBoxFlat_a0tk4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_r3fl7")
 value = 100.0
 show_percentage = false
 
 [node name="Screenshot2025-06-23143200-removebg-preview" type="Sprite2D" parent="."]
-position = Vector2(291.557, 65.5)
-scale = Vector2(0.635187, 0.615024)
+position = Vector2(258.82, 65.5)
+scale = Vector2(0.519703, 0.503206)
 texture = ExtResource("4_r3fl7")
 
 [editable path="testguy/character-male-a/Bomb"]

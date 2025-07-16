@@ -29,7 +29,8 @@ func hurt(hit_points):
 	$CameraPivot/Camera3D/ProgressBar.value = health 
 	if health == 0: 
 		die()
-		
+	
+	
 		
 func die():
 	print("DIE")

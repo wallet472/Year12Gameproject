@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://blc6ajevibqo0"]
+
+[ext_resource type="PackedScene" uid="uid://b4e7ixq1gbgj5" path="res://Assets/KayCity/car_taxi.gltf" id="1_y3klt"]
+[ext_resource type="Script" uid="uid://bdp5mfciaujn" path="res://Assets/KayCity/car_police.gd" id="2_4n2es"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aaxqq"]
+
+[node name="Car_taxi" type="Node3D"]
+
+[node name="car_taxi2" parent="." instance=ExtResource("1_y3klt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00980806, 0.0126618, 0.00705743)
+script = ExtResource("2_4n2es")
+
+[node name="HitBombArea" type="Area3D" parent="car_taxi2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="car_taxi2/HitBombArea"]
+transform = Transform3D(1.09633, 0, 0, 0, 1.09633, 0, 0, 0, 1.09633, 0, 0.0201552, -0.00462395)
+shape = SubResource("SphereShape3D_aaxqq")
+
+[connection signal="area_entered" from="car_taxi2/HitBombArea" to="car_taxi2" method="_on_hit_bomb_area_area_entered"]
+[connection signal="body_entered" from="car_taxi2/HitBombArea" to="car_taxi2" method="_on_hit_bomb_area_body_entered"]

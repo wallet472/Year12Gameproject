@@ -5,7 +5,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6f1ql"]
 
-[node name="Node3D" type="Node3D"]
+[node name="PoliceCar" type="Node3D"]
 
 [node name="car_police2" parent="." instance=ExtResource("1_2obkj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0359569, 0.079734, 0.312105)

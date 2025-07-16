@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjka64j3rc4gm"]
+
+[ext_resource type="PackedScene" uid="uid://cs81sv5vwo0nx" path="res://Assets/KayCity/building_D.gltf" id="1_xwijl"]
+[ext_resource type="Script" uid="uid://qt0h117l45vp" path="res://area_3d.gd" id="2_vidi5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ffkr7"]
+size = Vector3(4.19711, 0.625824, 5.36618)
+
+[sub_resource type="Animation" id="Animation_vidi5"]
+resource_name = "Building_fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("building_D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.22192, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ffkr7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("building_D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_onrci"]
+_data = {
+&"Building_fall": SubResource("Animation_vidi5"),
+&"RESET": SubResource("Animation_ffkr7")
+}
+
+[node name="Building_fall" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_vidi5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08815, 0.444065, 2.26597)
+shape = SubResource("BoxShape3D_ffkr7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_onrci")
+}
+
+[node name="building_D2" parent="." instance=ExtResource("1_xwijl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.093312, 0, 0.16062)
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

@@ -15,7 +15,7 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "road_junction"
+            "name" : "base"
         }
     ],
     "materials" : [
@@ -32,7 +32,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Cube.949",
+            "name" : "Cube.953",
             "primitives" : [
                 {
                     "attributes" : {
@@ -63,61 +63,61 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 272,
+            "count" : 96,
             "max" : [
                 1,
-                0.09999997913837433,
+                0.09999998658895493,
                 1
             ],
             "min" : [
                 -1,
                 0,
-                -1.000000238418579
+                -1
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 272,
+            "count" : 96,
             "type" : "VEC2"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 272,
+            "count" : 96,
             "type" : "VEC3"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 510,
+            "count" : 180,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 3264,
+            "byteLength" : 1152,
             "byteOffset" : 0,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 2176,
-            "byteOffset" : 3264,
+            "byteLength" : 768,
+            "byteOffset" : 1152,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 3264,
-            "byteOffset" : 5440,
+            "byteLength" : 1152,
+            "byteOffset" : 1920,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 1020,
-            "byteOffset" : 8704,
+            "byteLength" : 360,
+            "byteOffset" : 3072,
             "target" : 34963
         }
     ],
@@ -129,8 +129,8 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 9724,
-            "uri" : "road_junction.bin"
+            "byteLength" : 3432,
+            "uri" : "base.bin"
         }
     ]
 }
