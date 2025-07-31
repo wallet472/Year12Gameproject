@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cuhrkrejuoysn"]
 
 [ext_resource type="PackedScene" uid="uid://co4rau78ybcfh" path="res://Assets/KayCity/road_straight.gltf" id="1_3agd3"]
-[ext_resource type="PackedScene" uid="uid://ticlvp2csbb5" path="res://Assets/KayCity/base.gltf" id="2_arq6s"]
+[ext_resource type="PackedScene" uid="uid://ticlvp2csbb5" path="res://Assets/base.gltf" id="2_arq6s"]
 [ext_resource type="PackedScene" uid="uid://dwp3ull1jmht1" path="res://Assets/KayCity/building_A.gltf" id="3_d7lme"]
 [ext_resource type="PackedScene" uid="uid://cvxprr23uypxr" path="res://Assets/KayCity/building_E_withoutBase.gltf" id="4_5qk4o"]
 [ext_resource type="PackedScene" uid="uid://b57qetdxtk7td" path="res://Assets/KayCity/building_G_withoutBase.gltf" id="5_56lch"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6ytb5k57haxv"]
+
+[ext_resource type="PackedScene" uid="uid://bax3rsb0kk0dd" path="res://InfiniteRoad/RoadSegement.tscn" id="1_e5c5i"]
+[ext_resource type="PackedScene" uid="uid://dwp3ull1jmht1" path="res://Assets/KayCity/building_A.gltf" id="2_qy1ef"]
+[ext_resource type="PackedScene" uid="uid://c8nfct2t5wtx0" path="res://Assets/KayCity/building_C.gltf" id="3_n0bfb"]
+[ext_resource type="PackedScene" uid="uid://cs81sv5vwo0nx" path="res://Assets/KayCity/building_D.gltf" id="4_p8md6"]
+[ext_resource type="PackedScene" uid="uid://ccxb1l6l8ol0k" path="res://Assets/KayCity/building_B.gltf" id="5_4i8bv"]
+[ext_resource type="PackedScene" uid="uid://bona7osrd4aec" path="res://Assets/KayCity/building_G.gltf" id="6_cnwuw"]
+[ext_resource type="PackedScene" uid="uid://is0pah8tqrhv" path="res://Assets/KayCity/building_H.gltf" id="7_he2j8"]
+[ext_resource type="PackedScene" uid="uid://cdjumrnaf1gpx" path="res://Assets/KayCity/car_stationwagon.gltf" id="8_n0bfb"]
+
+[node name="RoadSegment" instance=ExtResource("1_e5c5i")]
+
+[node name="building_A2" parent="road_straight35" index="1" instance=ExtResource("2_qy1ef")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 1)
+
+[node name="building_C2" parent="road_straight35" index="2" instance=ExtResource("3_n0bfb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 3)
+
+[node name="building_D2" parent="road_straight35" index="3" instance=ExtResource("4_p8md6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, 5)
+
+[node name="building_B2" parent="road_straight35" index="4" instance=ExtResource("5_4i8bv")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -5, 0, 1)
+
+[node name="building_G2" parent="road_straight35" index="5" instance=ExtResource("6_cnwuw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 3)
+
+[node name="building_H2" parent="road_straight35" index="6" instance=ExtResource("7_he2j8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 5)
+
+[node name="car_stationwagon2" parent="." index="6" instance=ExtResource("8_n0bfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70775, 0.129872, 4.02129)

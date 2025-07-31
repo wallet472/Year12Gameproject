@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ticlvp2csbb5"
-path="res://.godot/imported/base.gltf-4b3c549128e0fde337972c176a64f752.scn"
+uid="uid://c1vkotxq5axfv"
+path="res://.godot/imported/base.gltf-e32842dd0a7b4c3ddcac43ddacb91a1b.scn"
 
 [deps]
 
-source_file="res://Assets/KayCity/base.gltf"
-dest_files=["res://.godot/imported/base.gltf-4b3c549128e0fde337972c176a64f752.scn"]
+source_file="res://Assets/base.gltf"
+dest_files=["res://.godot/imported/base.gltf-e32842dd0a7b4c3ddcac43ddacb91a1b.scn"]
 
 [params]
 

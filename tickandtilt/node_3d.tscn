@@ -1,8 +1,7 @@
-[gd_scene load_steps=47 format=4 uid="uid://73ibd5npqtkx"]
+[gd_scene load_steps=46 format=4 uid="uid://73ibd5npqtkx"]
 
 [ext_resource type="Script" uid="uid://dd140gdpywhbx" path="res://node_3d.gd" id="1_noarx"]
 [ext_resource type="Texture2D" uid="uid://q864mjmqcxsb" path="res://Assets/KennyCharacters/Textures/colormap.png" id="2_noarx"]
-[ext_resource type="PackedScene" uid="uid://c8j5md5cfvr4o" path="res://Assets/CustomModels/Bomb.glb" id="3_a0tk4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp525"]
 resource_name = "colormap"
@@ -126,13 +125,6 @@ tracks/6/path = NodePath("character-male-a/Skeleton3D:head")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/7/type = "position_3d"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("character-male-a/Bomb")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, 0.406295, 1.00624, -0.0304815)
 
 [sub_resource type="Animation" id="Animation_kwpav"]
 resource_name = "attack-kick-left"
@@ -1591,13 +1583,6 @@ tracks/10/path = NodePath("character-male-a/Skeleton3D:leg-right")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/11/type = "position_3d"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("character-male-a/Bomb")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = PackedFloat32Array(0, 1, 0.406295, 1.00624, -0.0304815)
 
 [sub_resource type="Animation" id="Animation_kujuy"]
 resource_name = "interact-left"
@@ -2932,13 +2917,6 @@ tracks/10/path = NodePath("character-male-a/Skeleton3D:leg-right")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
-tracks/11/type = "position_3d"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("character-male-a/Bomb")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = PackedFloat32Array(0, 1, 0.406295, 1.00624, -0.0304815)
 
 [sub_resource type="Animation" id="Animation_r3fl7"]
 resource_name = "walk_with_bomb"
@@ -3032,10 +3010,12 @@ radius = 0.221617
 height = 0.804988
 
 [node name="Player" type="CharacterBody3D"]
+transform = Transform3D(0.251837, 0, 0, 0, 0.176409, 0, 0, 0, 0.165275, 0, 0, 0)
 script = ExtResource("1_noarx")
 
 [node name="testguy" type="Node3D" parent="."]
 unique_name_in_owner = true
+transform = Transform3D(0.645371, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="character-male-a" type="Node3D" parent="testguy"]
 
@@ -3097,9 +3077,6 @@ skin = SubResource("Skin_ua6o5")
 [node name="head-mesh" type="MeshInstance3D" parent="testguy/character-male-a/Skeleton3D"]
 mesh = SubResource("ArrayMesh_g108x")
 skin = SubResource("Skin_ua6o5")
-
-[node name="Bomb" parent="testguy/character-male-a" instance=ExtResource("3_a0tk4")]
-transform = Transform3D(0.00227799, 0, -0.25999, 0, 0.26, 0, 0.25999, 0, 0.00227799, 0.406295, 1.00624, -0.0304815)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="testguy"]
 libraries = {

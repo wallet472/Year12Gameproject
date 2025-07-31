@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drilktw326von"
-path="res://.godot/imported/building_F.gltf-a0372992a36426b1f50403461293f462.scn"
+uid="uid://drbgh2aik0p06"
+path="res://.godot/imported/scene.gltf-e55268e70e1df8910dfceaaed2a25710.scn"
 
 [deps]
 
-source_file="res://Assets/KayCity/building_F.gltf"
-dest_files=["res://.godot/imported/building_F.gltf-a0372992a36426b1f50403461293f462.scn"]
+source_file="res://Assets/KayCity/missile__bomb_collection_-_fighter_jets_-_free/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-e55268e70e1df8910dfceaaed2a25710.scn"]
 
 [params]
 
@@ -32,12 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:building_F": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
