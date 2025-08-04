@@ -1,7 +1,8 @@
-[gd_scene load_steps=46 format=4 uid="uid://73ibd5npqtkx"]
+[gd_scene load_steps=47 format=4 uid="uid://73ibd5npqtkx"]
 
 [ext_resource type="Script" uid="uid://dd140gdpywhbx" path="res://node_3d.gd" id="1_noarx"]
 [ext_resource type="Texture2D" uid="uid://q864mjmqcxsb" path="res://Assets/KennyCharacters/Textures/colormap.png" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://c8gunclegyb40" path="res://Assets/CustomModels/fallout_mini_nuke/scene.gltf" id="3_a0tk4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp525"]
 resource_name = "colormap"
@@ -3096,3 +3097,6 @@ transform = Transform3D(1, 0, 0, 0, 0.922659, -0.385616, 0, 0.385616, 0.922659, 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.84217e-14, 0.22897, -4.90276)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_a0tk4")]
+transform = Transform3D(-9.97945e-09, 0.22301, 1.04048e-08, 0, -9.74811e-09, 0.238034, 0.228304, 9.74811e-09, 1.0944e-15, 0.0961637, 0.971001, -0.0157673)

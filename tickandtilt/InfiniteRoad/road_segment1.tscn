@@ -74,4 +74,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3351, 0.1, 5.20078)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26705, 0.1, 5.03508)
 
 [node name="character-male-b2" parent="." index="24" instance=ExtResource("16_4vicu")]
-transform = Transform3D(0.512225, 0, 0.0257242, 0, 0.51287, 0, -0.0257242, 0, 0.512225, 2.18857, 0.0999999, 0.730689)
+transform = Transform3D(0.0181584, 0, -0.512549, 0, 0.51287, 0, 0.512549, 0, 0.0181584, 2.32018, 0.0999999, 0.726026)
