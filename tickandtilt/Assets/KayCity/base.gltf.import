@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8gunclegyb40"
-path="res://.godot/imported/scene.gltf-c59e44e4ac293180db8c45656f4f7b5f.scn"
+uid="uid://ticlvp2csbb5"
+path="res://.godot/imported/base.gltf-4b3c549128e0fde337972c176a64f752.scn"
 
 [deps]
 
-source_file="res://Assets/CustomModels/fallout_mini_nuke/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-c59e44e4ac293180db8c45656f4f7b5f.scn"]
+source_file="res://Assets/KayCity/base.gltf"
+dest_files=["res://.godot/imported/base.gltf-4b3c549128e0fde337972c176a64f752.scn"]
 
 [params]
 

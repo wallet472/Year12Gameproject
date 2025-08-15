@@ -1,8 +1,13 @@
-[gd_scene load_steps=47 format=4 uid="uid://73ibd5npqtkx"]
+[gd_scene load_steps=51 format=4 uid="uid://73ibd5npqtkx"]
 
 [ext_resource type="Script" uid="uid://dd140gdpywhbx" path="res://node_3d.gd" id="1_noarx"]
 [ext_resource type="Texture2D" uid="uid://q864mjmqcxsb" path="res://Assets/KennyCharacters/Textures/colormap.png" id="2_noarx"]
-[ext_resource type="PackedScene" uid="uid://c8gunclegyb40" path="res://Assets/CustomModels/fallout_mini_nuke/scene.gltf" id="3_a0tk4"]
+[ext_resource type="PackedScene" uid="uid://c8j5md5cfvr4o" path="res://Assets/CustomModels/Bomb.glb" id="3_a0tk4"]
+[ext_resource type="Texture2D" uid="uid://dgi7gvrhor6ml" path="res://Screenshot_2025-06-23_143200-removebg-preview.png" id="4_r3fl7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a0tk4"]
+radius = 0.309425
+height = 1.36565
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp525"]
 resource_name = "colormap"
@@ -126,6 +131,13 @@ tracks/6/path = NodePath("character-male-a/Skeleton3D:head")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("character-male-a/Bomb")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0.406295, 1.00624, -0.0304815)
 
 [sub_resource type="Animation" id="Animation_kwpav"]
 resource_name = "attack-kick-left"
@@ -1584,6 +1596,13 @@ tracks/10/path = NodePath("character-male-a/Skeleton3D:leg-right")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/11/type = "position_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("character-male-a/Bomb")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, 0.406295, 1.00624, -0.0304815)
 
 [sub_resource type="Animation" id="Animation_kujuy"]
 resource_name = "interact-left"
@@ -1993,7 +2012,6 @@ tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 [sub_resource type="Animation" id="Animation_lliqr"]
 resource_name = "sprint"
 length = 0.5
-loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -2919,6 +2937,13 @@ tracks/10/path = NodePath("character-male-a/Skeleton3D:leg-right")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/11/type = "position_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("character-male-a/Bomb")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, 0.406295, 1.00624, -0.0304815)
 
 [sub_resource type="Animation" id="Animation_r3fl7"]
 resource_name = "walk_with_bomb"
@@ -3011,13 +3036,24 @@ _data = {
 radius = 0.221617
 height = 0.804988
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0tk4"]
+bg_color = Color(0.831897, 0.0667273, 0.100783, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3fl7"]
+bg_color = Color(0.385401, 0.688088, 0.288762, 1)
+
 [node name="Player" type="CharacterBody3D"]
-transform = Transform3D(0.251837, 0, 0, 0, 0.176409, 0, 0, 0, 0.165275, 0, 0, 0)
 script = ExtResource("1_noarx")
+
+[node name="BombArea" type="Area3D" parent="." groups=["Bomb"]]
+transform = Transform3D(0.00876149, 0, -0.999962, 0, 1, 0, 0.999962, 0, 0.00876149, 0.406295, 1.00624, -0.0304815)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BombArea"]
+transform = Transform3D(0.996179, -0.00868723, 0.086898, 0.0869174, 0.00187673, -0.996214, 0.00849125, 0.99996, 0.00262463, 0.00410018, 0.0679252, 0.40978)
+shape = SubResource("CapsuleShape3D_a0tk4")
 
 [node name="testguy" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(0.645371, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="character-male-a" type="Node3D" parent="testguy"]
 
@@ -3080,12 +3116,14 @@ skin = SubResource("Skin_ua6o5")
 mesh = SubResource("ArrayMesh_g108x")
 skin = SubResource("Skin_ua6o5")
 
+[node name="Bomb" parent="testguy/character-male-a" instance=ExtResource("3_a0tk4")]
+transform = Transform3D(0.00227799, 0, -0.25999, 0, 0.26, 0, 0.25999, 0, 0.00227799, 0.406295, 1.00624, -0.0304815)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="testguy"]
 libraries = {
 &"": SubResource("AnimationLibrary_isjkx"),
 &"local": SubResource("AnimationLibrary_jka67")
 }
-autoplay = "sprint"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438024, 0)
@@ -3100,5 +3138,20 @@ transform = Transform3D(1, 0, 0, 0, 0.922659, -0.385616, 0, 0.385616, 0.922659, 
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.84217e-14, 0.22897, -4.90276)
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("3_a0tk4")]
-transform = Transform3D(-9.97945e-09, 0.22301, 1.04048e-08, 0, -9.74811e-09, 0.238034, 0.228304, 9.74811e-09, 1.0944e-15, 0.0961637, 0.971001, -0.0157673)
+[node name="HealthBar" type="ProgressBar" parent="CameraPivot/Camera3D"]
+offset_left = 42.3762
+offset_top = 56.0
+offset_right = 416.376
+offset_bottom = 86.0
+scale = Vector2(0.801197, 0.761197)
+theme_override_styles/background = SubResource("StyleBoxFlat_a0tk4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_r3fl7")
+value = 100.0
+show_percentage = false
+
+[node name="Screenshot2025-06-23143200-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(258.82, 65.5)
+scale = Vector2(0.519703, 0.503206)
+texture = ExtResource("4_r3fl7")
+
+[editable path="testguy/character-male-a/Bomb"]

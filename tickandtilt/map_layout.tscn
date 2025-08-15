@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://dm14egyqxe8h4"]
 
-[ext_resource type="PackedScene" uid="uid://ticlvp2csbb5" path="res://Assets/KayCity/base.gltf" id="1_ifq31"]
+[ext_resource type="PackedScene" path="res://Assets/KayCity/base.gltf" id="1_ifq31"]
 [ext_resource type="PackedScene" uid="uid://co4rau78ybcfh" path="res://Assets/KayCity/road_straight.gltf" id="2_ernxc"]
 [ext_resource type="PackedScene" uid="uid://d0flb1yje2ic7" path="res://Assets/KayCity/trafficlight_C.gltf" id="3_lngpw"]
 [ext_resource type="PackedScene" uid="uid://b4e7ixq1gbgj5" path="res://Assets/KayCity/car_taxi.gltf" id="4_pq5e7"]

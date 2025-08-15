@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2r8jnf1uph3l"]
-
-[ext_resource type="Script" uid="uid://cw2p02ik0kv1x" path="res://cardriving.gd" id="1_cw7eu"]
-[ext_resource type="PackedScene" uid="uid://drvfl0sfx567j" path="res://Assets/KayCity/car_police.gltf" id="2_8t4tw"]
-
-[node name="Node3D" type="Node3D"]
-script = ExtResource("1_cw7eu")
-
-[node name="car_police2" parent="." instance=ExtResource("2_8t4tw")]
