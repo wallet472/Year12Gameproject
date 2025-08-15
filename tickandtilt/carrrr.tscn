@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjl7oxiy8vs34"]
+
+[ext_resource type="PackedScene" uid="uid://drvfl0sfx567j" path="res://Assets/KayCity/car_police.gltf" id="1_k77ip"]
+
+[sub_resource type="Animation" id="Animation_rhekb"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("car_police2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_s3rjk"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("car_police2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.0333333, 1, 0, 0, 0, 0.466667, 1, 0, 0, 2.40626)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c7avn"]
+_data = {
+&"RESET": SubResource("Animation_rhekb"),
+&"new_animation": SubResource("Animation_s3rjk")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="car_police2" parent="." instance=ExtResource("1_k77ip")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="car_police2"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_c7avn")
+}

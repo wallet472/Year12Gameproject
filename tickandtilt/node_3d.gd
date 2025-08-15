@@ -10,7 +10,7 @@ extends CharacterBody3D
 @onready var _camera: Camera3D = %Camera3D
 @onready var _skin: Node3D = %testguy
 @onready var anim: AnimationPlayer = $testguy/AnimationPlayer
-var health = 100
+var health = 200
 @onready var health_bar: ProgressBar = $CameraPivot/Camera3D/HealthBar
 
 

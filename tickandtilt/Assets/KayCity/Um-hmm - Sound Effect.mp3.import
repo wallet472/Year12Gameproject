@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cv2rkevwgw58o"
+path="res://.godot/imported/Um-hmm - Sound Effect.mp3-8131f1ae389e7d2cce44be0fd7f20ba6.mp3str"
+
+[deps]
+
+source_file="res://Assets/KayCity/Um-hmm - Sound Effect.mp3"
+dest_files=["res://.godot/imported/Um-hmm - Sound Effect.mp3-8131f1ae389e7d2cce44be0fd7f20ba6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

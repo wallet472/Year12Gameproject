@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://7idq8lncs8ti"]
+
+[ext_resource type="Script" uid="uid://blg7362yhr157" path="res://timer.gd" id="1_qdhxh"]
+
+[node name="timer" type="Node"]
+script = ExtResource("1_qdhxh")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -324.0
+offset_right = 107.0
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.960001)
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 40
+text = "00:00
+"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true

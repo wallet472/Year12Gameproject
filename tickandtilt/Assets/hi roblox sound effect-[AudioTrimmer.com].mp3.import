@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhnhqfww0ik40"
+path="res://.godot/imported/hi roblox sound effect-[AudioTrimmer.com].mp3-31c9e5579009a5df7289d7e13aa71482.mp3str"
+
+[deps]
+
+source_file="res://Assets/hi roblox sound effect-[AudioTrimmer.com].mp3"
+dest_files=["res://.godot/imported/hi roblox sound effect-[AudioTrimmer.com].mp3-31c9e5579009a5df7289d7e13aa71482.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
