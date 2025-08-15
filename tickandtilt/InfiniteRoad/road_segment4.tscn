@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7f3yh58ggbf1"]
+
+[ext_resource type="PackedScene" uid="uid://bax3rsb0kk0dd" path="res://InfiniteRoad/RoadSegement.tscn" id="1_biqme"]
+[ext_resource type="PackedScene" uid="uid://ccxb1l6l8ol0k" path="res://Assets/KayCity/building_B.gltf" id="2_18ymt"]
+[ext_resource type="PackedScene" uid="uid://cs81sv5vwo0nx" path="res://Assets/KayCity/building_D.gltf" id="3_hc4y7"]
+[ext_resource type="PackedScene" uid="uid://bona7osrd4aec" path="res://Assets/KayCity/building_G.gltf" id="4_ckl42"]
+[ext_resource type="PackedScene" uid="uid://c8nfct2t5wtx0" path="res://Assets/KayCity/building_C.gltf" id="5_vscsr"]
+[ext_resource type="PackedScene" uid="uid://is0pah8tqrhv" path="res://Assets/KayCity/building_H.gltf" id="6_y0vtm"]
+[ext_resource type="PackedScene" uid="uid://q5qswpyagok7" path="res://InfiniteRoad/hatchback driving.tscn" id="7_hc4y7"]
+[ext_resource type="PackedScene" uid="uid://b2r8jnf1uph3l" path="res://InfiniteRoad/police.tscn" id="8_ckl42"]
+
+[node name="RoadSegment" instance=ExtResource("1_biqme")]
+
+[node name="building_B2" parent="." index="6" instance=ExtResource("2_18ymt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, 1)
+
+[node name="building_D2" parent="." index="7" instance=ExtResource("3_hc4y7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, 3)
+
+[node name="building_G2" parent="." index="8" instance=ExtResource("4_ckl42")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, 5)
+
+[node name="building_C2" parent="." index="9" instance=ExtResource("5_vscsr")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 3, 0, 1)
+
+[node name="building_H2" parent="." index="10" instance=ExtResource("6_y0vtm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 5)
+
+[node name="building_H3" parent="." index="11" instance=ExtResource("6_y0vtm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 3)
+
+[node name="Node3D" parent="." index="12" instance=ExtResource("7_hc4y7")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.655522, 0.124588, 1.47956)
+speed = 7
+
+[node name="Node3D2" parent="." index="13" instance=ExtResource("8_ckl42")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.19618, 0.109634, 4.12123)
+speed = 12

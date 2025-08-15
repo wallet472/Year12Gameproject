@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://q5qswpyagok7"]
+
+[ext_resource type="PackedScene" uid="uid://updagt1t6dj" path="res://Assets/KayCity/car_hatchback.gltf" id="1_8cwq0"]
+[ext_resource type="Script" uid="uid://cw2p02ik0kv1x" path="res://cardriving.gd" id="1_h31gv"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_h31gv")
+
+[node name="car_hatchback2" parent="." instance=ExtResource("1_8cwq0")]
