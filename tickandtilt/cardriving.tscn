@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cigtnbikeyji6"]
+
+[ext_resource type="PackedScene" uid="uid://vqf0jciqrw7q" path="res://Assets/KayCity/car_sedan.gltf" id="1_0uyxe"]
+[ext_resource type="Script" uid="uid://cw2p02ik0kv1x" path="res://cardriving.gd" id="1_l73ti"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_l73ti")
+
+[node name="car_sedan2" parent="." instance=ExtResource("1_0uyxe")]
+transform = Transform3D(0.999996, 0.000655105, 0.00284052, -0.000624751, 0.999943, -0.0106752, -0.00284735, 0.0106734, 0.999939, 0, 0, 0)

@@ -1993,6 +1993,7 @@ tracks/10/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
 [sub_resource type="Animation" id="Animation_lliqr"]
 resource_name = "sprint"
 length = 0.5
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -3084,6 +3085,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_isjkx"),
 &"local": SubResource("AnimationLibrary_jka67")
 }
+autoplay = "sprint"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438024, 0)

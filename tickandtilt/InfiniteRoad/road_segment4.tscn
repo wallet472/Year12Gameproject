@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bona7osrd4aec" path="res://Assets/KayCity/building_G.gltf" id="4_ckl42"]
 [ext_resource type="PackedScene" uid="uid://c8nfct2t5wtx0" path="res://Assets/KayCity/building_C.gltf" id="5_vscsr"]
 [ext_resource type="PackedScene" uid="uid://is0pah8tqrhv" path="res://Assets/KayCity/building_H.gltf" id="6_y0vtm"]
-[ext_resource type="PackedScene" uid="uid://b4e7ixq1gbgj5" path="res://Assets/KayCity/car_taxi.gltf" id="7_hc4y7"]
-[ext_resource type="PackedScene" uid="uid://drvfl0sfx567j" path="res://Assets/KayCity/car_police.gltf" id="8_ckl42"]
+[ext_resource type="PackedScene" uid="uid://q5qswpyagok7" path="res://InfiniteRoad/hatchback driving.tscn" id="7_hc4y7"]
+[ext_resource type="PackedScene" uid="uid://b2r8jnf1uph3l" path="res://InfiniteRoad/police.tscn" id="8_ckl42"]
 
 [node name="RoadSegment" instance=ExtResource("1_biqme")]
 
@@ -29,8 +29,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 
 [node name="building_H3" parent="." index="11" instance=ExtResource("6_y0vtm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 3)
 
-[node name="car_taxi2" parent="." index="12" instance=ExtResource("7_hc4y7")]
-transform = Transform3D(-0.997037, 0, 0.0769278, 0, 1, 0, -0.0769278, 0, -0.997037, 1.27714, 0.144703, 0.554739)
+[node name="Node3D" parent="." index="12" instance=ExtResource("7_hc4y7")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.655522, 0.124588, 1.47956)
+speed = 7
 
-[node name="car_police2" parent="." index="13" instance=ExtResource("8_ckl42")]
-transform = Transform3D(-0.999712, 0, 0.0239959, 0, 1, 0, -0.0239959, 0, -0.999712, -0.68314, 0.161033, 3.14304)
+[node name="Node3D2" parent="." index="13" instance=ExtResource("8_ckl42")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.19618, 0.109634, 4.12123)
+speed = 12

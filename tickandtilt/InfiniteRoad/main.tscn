@@ -25,7 +25,7 @@ ssr_enabled = true
 [node name="main" type="Node3D"]
 script = ExtResource("1_vlse0")
 road_scenes = Array[PackedScene]([ExtResource("2_8e7e7"), ExtResource("3_vlse0"), ExtResource("4_abh5i"), ExtResource("5_abh5i")])
-road_speed = 5.0
+road_speed = 4.6
 delete_z_position = -18.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -36,7 +36,4 @@ transform = Transform3D(0.866025, 0, -0.5, 0.482963, 0.258819, 0.836516, 0.12941
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("6_abh5i")]
-transform = Transform3D(0.77, 0, 0, 0, 0.45, 0, 0, 0, 0.486, 0, 1, 0)
-forward_speed = 0.6
-lateral_speed = 1.9
-jump_force = 3.025
+transform = Transform3D(0.77, 0, 0, 0, 0.45, 0, 0, 0, 0.486, 0, 0.001621, 0)

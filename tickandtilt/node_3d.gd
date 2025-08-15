@@ -1,21 +1,15 @@
 extends CharacterBody3D
 
 @export_group("Movement")
-@export var forward_speed := 2.0   # Constant forward speed
 @export var lateral_speed := 5.0   # Left/right speed
 @export var acceleration := 20.0   # Movement smoothing
-@export var jump_force := 5.0      # Jump strength
+@export var jump_force := 3.4      # Jump strength
 @export var gravity := 9.8         # Gravity strength
 
-@onready var _camera: Camera3D = %Camera3D
-@onready var _skin: Node3D = %testguy
 @onready var anim: AnimationPlayer = $testguy/AnimationPlayer
 
-# Camera offset (behind and slightly above player)
-var _camera_offset := Vector3(0, 2, 5)
-
 func _ready() -> void:
-	# Optional: Hide mouse cursor
+	# Hide mouse cursor
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func _physics_process(delta: float) -> void:
@@ -27,35 +21,29 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = jump_force
 
-	# Get forward direction (negative Z-axis, Godot's forward)
-	var forward := global_transform.basis.z.normalized()
+	# Get right direction (Godot's x-axis)
 	var right := global_transform.basis.x.normalized()
 
-	# Constant forward movement
-	var move_direction := forward * forward_speed
-	# Add lateral movement (left/right)
+	# Lateral movement (left/right)
 	var lateral_input := Input.get_axis("move_left", "move_right")
-	move_direction += right * lateral_input * lateral_speed
+	var move_direction := right * lateral_input * lateral_speed
 
 	# Preserve y velocity for gravity/jump
 	var y_velocity := velocity.y
-	# Update x and z velocities with smoothing
+	# Update x velocity with smoothing
 	velocity.x = move_toward(velocity.x, move_direction.x, acceleration * delta)
-	velocity.z = move_toward(velocity.z, move_direction.z, acceleration * delta)
+	velocity.z = 0.0  # Prevent movement in z-axis
 	velocity.y = y_velocity
 
 	# Apply movement
 	move_and_slide()
 
-	# Update camera position (follow player from behind)
-	#_camera.global_position = global_position + _camera_offset
-	#_camera.look_at(global_position, Vector3.UP)
-
-	# Animation
-	var ground_speed := Vector2(velocity.x, velocity.z).length()
-	if ground_speed > 0.0:
-		anim.play("local/walk_with_bomb", 0.2)
-	else:
-		anim.play("local/idle_with_bomb", 0.2)
+	# Animation: Prioritize jump when airborne
 	if not is_on_floor():
 		anim.play("jump", 0.2)
+	else:
+		var ground_speed = abs(velocity.x)
+		if ground_speed > 0.0:
+			anim.play("local/walk_with_bomb", 0.2)
+		else:
+			anim.play("local/idle_with_bomb", 0.2)

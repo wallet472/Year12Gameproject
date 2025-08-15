@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://hvlvh0akg04o"]
+[gd_scene load_steps=9 format=3 uid="uid://hvlvh0akg04o"]
 
 [ext_resource type="PackedScene" uid="uid://bax3rsb0kk0dd" path="res://InfiniteRoad/RoadSegement.tscn" id="1_uyvfj"]
 [ext_resource type="PackedScene" uid="uid://drilktw326von" path="res://Assets/KayCity/building_F.gltf" id="2_4lgr5"]
@@ -6,10 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dwp3ull1jmht1" path="res://Assets/KayCity/building_A.gltf" id="4_e1poj"]
 [ext_resource type="PackedScene" uid="uid://is0pah8tqrhv" path="res://Assets/KayCity/building_H.gltf" id="5_vnl8j"]
 [ext_resource type="PackedScene" uid="uid://dhk35a2uv0yx3" path="res://Assets/KayCity/building_E.gltf" id="6_u5pde"]
-[ext_resource type="PackedScene" uid="uid://updagt1t6dj" path="res://Assets/KayCity/car_hatchback.gltf" id="7_vnl8j"]
-[ext_resource type="PackedScene" uid="uid://vqf0jciqrw7q" path="res://Assets/KayCity/car_sedan.gltf" id="8_u5pde"]
-[ext_resource type="PackedScene" uid="uid://b4e7ixq1gbgj5" path="res://Assets/KayCity/car_taxi.gltf" id="9_fjqsx"]
-[ext_resource type="PackedScene" uid="uid://drvfl0sfx567j" path="res://Assets/KayCity/car_police.gltf" id="10_rgs3p"]
+[ext_resource type="PackedScene" uid="uid://cigtnbikeyji6" path="res://cardriving.tscn" id="7_73rkq"]
+[ext_resource type="PackedScene" uid="uid://b2r8jnf1uph3l" path="res://InfiniteRoad/police.tscn" id="8_e1poj"]
 
 [node name="RoadSegment" instance=ExtResource("1_uyvfj")]
 
@@ -31,17 +29,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0,
 [node name="building_E2" parent="." index="11" instance=ExtResource("6_u5pde")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, 5)
 
-[node name="car_hatchback2" parent="." index="12" instance=ExtResource("7_vnl8j")]
-transform = Transform3D(-0.999998, 0, 0.0019373, 0, 1, 0, -0.0019373, 0, -0.999998, 0.669098, 0.116074, 1)
+[node name="Node3D" parent="." index="12" instance=ExtResource("7_73rkq")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.70549, 0.117036, 3.06421)
 
-[node name="car_hatchback3" parent="." index="13" instance=ExtResource("7_vnl8j")]
-transform = Transform3D(-0.999936, 0, -0.0113269, 0, 1, 0, 0.0113269, 0, -0.999936, 0.684851, 0.11758, 4)
-
-[node name="car_sedan2" parent="." index="14" instance=ExtResource("8_u5pde")]
-transform = Transform3D(-0.999953, 0, 0.00972128, 0, 1, 0, -0.00972128, 0, -0.999953, -0.722121, 0.108383, 1.11706)
-
-[node name="car_taxi2" parent="." index="15" instance=ExtResource("9_fjqsx")]
-transform = Transform3D(-0.999925, 0, 0.0122867, 0, 1, 0, -0.0122867, 0, -0.999925, -1.29965, 0.114799, 4)
-
-[node name="car_police2" parent="." index="16" instance=ExtResource("10_rgs3p")]
-transform = Transform3D(-0.999282, 0, 0.037882, 0, 1, 0, -0.037882, 0, -0.999282, 1.33545, 0.110624, 2.75981)
+[node name="Node3D2" parent="." index="13" instance=ExtResource("8_e1poj")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.31881, 0.111769, 3.99458)
+speed = 7

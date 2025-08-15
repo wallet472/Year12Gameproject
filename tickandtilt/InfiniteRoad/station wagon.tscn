@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg6nugtg7pnnm"]
+
+[ext_resource type="Script" uid="uid://locteqhjfrl0" path="res://station_wagon.gd" id="1_214ku"]
+[ext_resource type="PackedScene" uid="uid://cdjumrnaf1gpx" path="res://Assets/KayCity/car_stationwagon.gltf" id="2_hja8w"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_214ku")
+
+[node name="car_stationwagon2" parent="." instance=ExtResource("2_hja8w")]

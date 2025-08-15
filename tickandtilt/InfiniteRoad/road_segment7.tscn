@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6ytb5k57haxv"]
+[gd_scene load_steps=10 format=3 uid="uid://b6ytb5k57haxv"]
 
 [ext_resource type="PackedScene" uid="uid://bax3rsb0kk0dd" path="res://InfiniteRoad/RoadSegement.tscn" id="1_e5c5i"]
 [ext_resource type="PackedScene" uid="uid://dwp3ull1jmht1" path="res://Assets/KayCity/building_A.gltf" id="2_qy1ef"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ccxb1l6l8ol0k" path="res://Assets/KayCity/building_B.gltf" id="5_4i8bv"]
 [ext_resource type="PackedScene" uid="uid://bona7osrd4aec" path="res://Assets/KayCity/building_G.gltf" id="6_cnwuw"]
 [ext_resource type="PackedScene" uid="uid://is0pah8tqrhv" path="res://Assets/KayCity/building_H.gltf" id="7_he2j8"]
-[ext_resource type="PackedScene" uid="uid://cdjumrnaf1gpx" path="res://Assets/KayCity/car_stationwagon.gltf" id="8_n0bfb"]
+[ext_resource type="PackedScene" uid="uid://q5qswpyagok7" path="res://InfiniteRoad/hatchback driving.tscn" id="8_p8md6"]
+[ext_resource type="PackedScene" uid="uid://cigtnbikeyji6" path="res://cardriving.tscn" id="9_4i8bv"]
 
 [node name="RoadSegment" instance=ExtResource("1_e5c5i")]
 
@@ -29,5 +30,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0,
 [node name="building_H2" parent="road_straight35" index="6" instance=ExtResource("7_he2j8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 5)
 
-[node name="car_stationwagon2" parent="." index="6" instance=ExtResource("8_n0bfb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70775, 0.129872, 4.02129)
+[node name="Node3D" parent="." index="6" instance=ExtResource("8_p8md6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.707857, 0.111612, 4.27609)
+
+[node name="Node3D2" parent="." index="7" instance=ExtResource("9_4i8bv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.686336, 0.0947267, 4.90946)
